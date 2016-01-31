@@ -1,0 +1,55 @@
+@include b(l-masthead){
+	top: 20px;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+
+	&.l-masthead--absolute {
+		position: absolute;
+	}
+
+	&.l-masthead--static {
+		background: $black;
+		padding: 20px 0;
+	}
+
+	@include e(logo) {
+		float: left;
+		width: 307px;
+		height: 100px;
+		background: url("/app/themes/paulcambray/app/img/logo/logo.png") no-repeat;
+		@include image-2x("/app/themes/paulcambray/app/img/logo/logo2x.png", contain)
+	}
+
+	@include e(nav) {
+		float: right;
+		height: 100px;
+
+		@include m(item) {
+			display: inline-block;
+			margin-right: 40px;
+			position: relative;
+			top: 50%;
+			transform: translate(0%, -50%);  
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+				color: $white;
+				text-decoration: none;
+				@include rem(font-size, 18px);
+				transition: color .5s ease;
+				font-family: 'bebas_neueregular';
+				letter-spacing: 1.5px;
+			}
+
+			&.current-menu-item {
+				a {
+					color: $accent;
+				}
+			}
+		}
+	}
+}

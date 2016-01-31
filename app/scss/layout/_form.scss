@@ -1,0 +1,62 @@
+.gform_wrapper {
+	.gform_body {
+		width: 100%;
+		float: left;
+		border: 1px solid $accent;
+		border-radius: 7px;
+		
+		.gfield {
+			min-height: 50px;
+
+			.gfield_label {
+				width: 25%;
+				float: left;
+				border-right: 1px solid $accent;
+				border-bottom: 1px solid $accent;
+				margin: 0;
+				min-height: 50px;
+				font-family: 'bebas_neuelight';
+				text-align: center;
+				padding-top: 18px;
+				font-size: 14px;
+				letter-spacing: 1px;
+
+				.gfield_required {
+					position: absolute;
+				}
+			}
+
+			.ginput_container {
+				width: 75%;
+				float: left;
+				border-bottom: 1px solid $accent;
+				margin: 0;
+				min-height: 50px;
+
+				input {
+					min-height: 49px;
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+			}
+
+			&.last-label {
+				.gfield_label {
+					border-bottom: none
+				}
+
+				.ginput_container {
+					border-bottom: none
+				}
+			}
+		}
+	}
+
+	.gform_footer {
+		input[type="submit"] {
+			float: right;
+			color: $accent;
+			font-family: 'bebas_neueregular';
+		}
+	}
+}

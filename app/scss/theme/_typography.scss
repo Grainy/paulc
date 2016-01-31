@@ -1,0 +1,152 @@
+/* Typography */
+
+
+strong {
+	font-weight:700;
+	color: $primary-color;
+}
+
+h1,h2,h3,h4,h5,h6, .htag{
+	font-family: $header-font-family;
+	//font-weight: $header-font-weight;
+	color: $header-font-color;
+	//text-rendering: optimizeLegibility;
+	text-transform: uppercase;
+	letter-spacing:2pt;
+}
+
+@include respond(all-phones) {
+	h1,h2,h3,h4,h5,h6 {
+		word-wrap: break-word;
+	}
+
+	.htag {
+		letter-spacing:1pt;
+	}
+}
+
+h1 {
+	font-size: 60px;
+
+	@include respond(desktop){
+		font-size: 80px;
+	}
+}
+
+h2 {
+	font-size: 56px;
+}
+
+h3 {
+	font-size: 42px;
+}
+
+h4 {
+	font-size: 32px;
+	//font-family: 'open_sanssemibold';
+}
+
+h5 {
+	font-size: 26px;
+	//font-family: 'open_sanssemibold';
+}
+
+h6 {
+	font-size: 20px;
+}
+
+p, li, a, blockquote, h1, h2, h3, h4, h5, h6 {
+	line-height: calc(1em + 50%);
+}
+
+p, li, a, blockquote {
+
+	font-size:16px;
+	@include respond(desktop){
+
+		font-size:18px;
+	}
+}
+
+blockquote {
+	border-left: 2px solid $primary-color;
+	padding: 6px 21px;
+
+	footer {
+		font-size: 14px;
+		//font-family: 'open_sanssemibold';
+		margin-top: 15px;
+	}
+}
+
+p, li  {
+	font-family: $font-family;
+}
+
+p {
+	margin: .5em 0;
+	//font-family: 'open_sanslight';
+	&.small {
+		font-size: 14px;
+	}
+
+	&.leading-p {
+		font-size: 20px;
+		//font-family: 'open_sansregular';
+		color: $header-font-color;
+	}
+}
+
+
+ul {
+	li {
+		// &:before {
+		// 	content: "• ";
+		// 	color: $secondary-color;
+		// 	font-size: 30px;
+		// 	position: relative;
+		// 	display: inline-block;
+		// 	top: 4px;
+		// 	margin-right: 5px;
+		// }
+	}
+
+	&.breadcrumb {
+		li {
+			display: inline-block;
+			color: $primary-color;
+			font-size: 14px;
+			font-family: 'open_sanssemibold';
+			cursor: pointer;
+
+			&:hover {
+				border-bottom: 1px solid $body-font-color;
+			}
+
+			&:before {
+				display: none;
+			}
+
+			&:after {
+				content: '»';
+				color: $header-font-color;
+				margin-left: 5px;
+			}
+
+			&:last-child {
+				color: $header-font-color;
+
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+a.link-head {
+	color: $primary-color;
+	text-decoration: none;
+	font-family: $header-font-family;
+	font-size: 24px;
+}

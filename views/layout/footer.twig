@@ -1,0 +1,35 @@
+<header class="l-footer page-section">
+	{% block footer %}
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<h5>About Paul Cambray</h5>
+						<p>Suspendisse sit amet eros id purus varius scelerisque. Aenean nisl urna, sagittis in dignissim vitae, consequat et lacus. Vivamus eget ultricies risus.</p>
+						<ul>
+							<li>Hale County Club &amp; Spa</li>
+							<li>47 Clay Lane</li>
+							<li>Altrincham</li>
+							<li>WA15 7AF</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h5>Contact</h5>
+						<p>Suspendisse sit amet eros id purus varius scelerisque. Aenean nisl urna, sagittis in dignissim vitae, consequat et lacus. Vivamus eget ultricies risus.</p>
+						
+						<ul>
+							<li><a href="mailto:paul@paulcambray.fitness">paul@paulcambray.fitness</a></li>
+							<li>07791217284</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h5>Stay up to date</h5>
+						{% filter shortcodes %}
+							[gravityform id="1" ajax="true" title="false" description="false"]
+						{% endfilter  %}
+					</div>
+				</div>
+			</div>
+		</footer>
+	{% endblock %}
+</header>

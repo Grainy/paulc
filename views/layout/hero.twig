@@ -1,0 +1,16 @@
+
+{% set heroBgImg = post.get_field('hero_background_image') ? post.get_field('hero_background_image') : site.theme.link ~ "/app/img/tmp/placeholder-hero.jpg" %}
+
+<div class="l-hero" style="background-image:url('{{ heroBgImg}}')">
+	<div class="l-hero__overlay">
+		<div class="l-hero__text">
+			<h2>{{heading}}</h2>
+		</div>
+
+		{% if video == true %}
+			<div class="l-hero__play">
+				<img src="{{site.theme.link}}/app/img/icon/btn-play.png" alt="" class="js-play">
+			</div>
+		{% endif %}
+	</div>
+</div>

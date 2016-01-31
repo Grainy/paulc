@@ -1,0 +1,145 @@
+@include b(l-hero){
+	position:relative;
+	height:100vh;
+	background: $black;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position: top center;
+	overflow:hidden;
+
+	@include respond(desktop) {
+		margin-top: 0;
+	}
+
+	@include e(text) {
+		text-align: center;
+
+		h2, h5 {
+			color: $white;
+		}
+
+		h2{
+			@include rem(font-size, 58px);
+			font-family: $header-font-family-bold;
+			line-height: 1;
+			margin-bottom: 0;
+
+			@media only screen and (min-width: 841px) {
+				@include rem(font-size, 144px);
+				letter-spacing: 15px;
+			}
+		}
+
+		h5{
+			@include rem(font-size, 30px);
+			line-height: 1;
+			@include respond(desktop){
+				@include rem(font-size, 60px);
+			}
+		}
+	}
+
+	@include e(overlay){
+		@extend %ab-center;
+		z-index:2001;
+		text-align: center;
+		width: 100%;
+
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	@include e(bg){
+		width:100%;
+		height:auto;
+		display: block;
+		max-width:100%;
+	}
+
+	@include e(play){
+		z-index:2009;
+		display: inline-block;
+		margin:20px auto 0 auto;
+		width: 99px;
+		cursor: pointer;
+
+		img {
+			width: 100%;
+		}
+
+		@include m(smaller){
+			top:50%!important;
+			left:50%!important;
+			bottom:auto!important;
+			transform: translateX(-50%)!important;
+			transform:translateY(-50%)!important;
+		}
+	}
+
+	@include e(reveal){
+		position: absolute;
+		z-index:2001;
+		bottom:15px;
+		left:50%;
+		background-image: url("../img/ui/explore-arrow.png");
+		background-repeat: no-repeat;
+		background-size:100% auto;
+		transform:translateX(-50%);
+		width:105px;
+		height:48px;
+		color:#fff;
+
+		&:hover{
+			cursor:pointer;
+		}
+
+		@include respond(desktop){
+			width:140px;
+			height:63px;
+		}
+	}
+
+	@include m(has-overlay){
+		&:after{
+			content:'';
+			width:100%;
+			height:100%;
+			background-color: rgba(0,0,0,0.5);
+			display: block;
+			position: absolute;
+			top:0;
+			left:0;
+			z-index:2000;
+		}
+	}
+
+	&.smaller {
+		height: 80vh;
+		
+		.l-hero__text {
+			h2{
+				@include rem(font-size, 30px);
+
+				@media only screen and (min-width: 841px) {
+					@include rem(font-size, 68px);
+					letter-spacing: 7px;
+				}
+			}
+		}
+
+		.l-hero__overlay {
+			width: 50%;
+		}
+
+		p {
+			color: $white;
+		}
+
+		.b-button {
+			font-size: 18px;
+			color: $white;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+// docs
+.icon-magic-wand:before {
+	content: "\e997";
+}
+
+.icon-bug:before {
+	content: "\e999";
+}
+
+.icon-chrome:before {
+	content: "\eae5";
+}
+.icon-clipboard:before {
+    content: "\e9b8";
+}
+
+
+//social
+.icon-google-plus2:before {
+	content: "\ea89";
+	color:$social-gplus;
+}
+
+.icon-facebook2:before {
+	content: "\ea8d";
+	color:$social-fb;
+}
+
+.icon-twitter2:before {
+	content: "\ea92";
+	color:$social-twitter;
+}
+
+.icon-linkedin:before {
+	content: "\eac8";
+	color:$social-linkedin;
+}

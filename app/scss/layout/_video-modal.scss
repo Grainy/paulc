@@ -1,0 +1,83 @@
+@include b(l-vid-modal){
+	height:100%;
+	height:100vh;
+
+	width:100%;
+	width:100vw;
+
+	position:fixed;
+	z-index:5000;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	transform: translateY(200%);
+	visibility: hidden;
+	background: rgba(0,0,0,1);
+	transition: transform .4s ease-in-out;
+
+	&.animated{
+		visibility: visible;
+		transform: translateY(0%);
+	}
+
+	@include e(inner){
+		opacity: 0;
+		width:100%;
+		height:100%;
+		transition: .4s ease-in-out;
+
+		.animated & {
+			opacity:1;
+		}
+	}
+
+	@include e(vid){
+		width:100%;
+		height:100%;
+	}
+
+	@include e(close){
+		width:63px;
+		height:63px;
+		position: absolute;
+		top:30px;
+		right:30px;
+		z-index:2020;
+		&:hover{
+			cursor:pointer;
+		}
+		img{
+			display: block;
+		}
+	}
+
+	video{
+		width:100%;
+		height:100%;
+	}
+
+	.js-wistia-embed{
+		width:100%;
+		height:100%;
+
+		.wistia_embed{
+			width:100%;
+			height:100%;
+		}
+	}
+}
+
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}

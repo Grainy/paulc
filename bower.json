@@ -1,0 +1,23 @@
+{
+  "name": "Paul Cambray",
+  "description": "Paul Cambray - Personal Trainer",
+  "main": "",
+  "authors": [
+    "Steven Grain"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "font-awesome": "fontawesome#~4.5.0"
+  }
+}

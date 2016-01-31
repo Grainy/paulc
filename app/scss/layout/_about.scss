@@ -1,0 +1,23 @@
+@include b(l-about) {
+	h1 {
+		@include rem(font-size, 30px);
+		color: $black;
+
+		@media only screen and (min-width: 841px) {
+			@include rem(font-size, 64px);
+			letter-spacing: 2px;
+		}
+	}
+
+	h2 {
+		@include rem(font-size, 36px);
+		color: $black;
+		letter-spacing: 2px;
+	}
+	
+	@include e(qualifications) {
+		@include respond(desktop) {
+			margin-top: 70px;
+		}
+	}
+}

@@ -1,0 +1,214 @@
+.page-template-page-contact{
+	background-color: #EEE;
+}
+
+@include b(l-docs){
+
+	@include e(list){
+		list-style:none;
+		text-align: center;
+		margin:0;
+		padding:0;
+		li{
+			display:inline;
+			margin-right: 30px;
+
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+// SITE MAP
+
+#wpseo_sitemap{
+
+	width:100%;
+
+
+	>div{
+
+		width:100%;
+		display: inline-block;
+		margin-bottom: 30px;
+
+	}
+	#sitemap_posts{
+		display: none;
+	}
+
+	h3{
+		@include rem(font-size, 24px);
+		font-family:$header-font-family-bold;
+		a{
+			color:#000;
+			text-decoration: none;
+			@include rem(font-size, 24px);
+		}
+	}
+
+
+
+
+	ul{
+		li{
+			//float: left;
+			a{
+				color:#000;
+				text-decoration: none;
+				@include rem(font-size, 14px);
+				text-decoration: none;
+				padding:5px 10px;
+			}
+		}
+	}
+
+}
+
+
+// LOAD MORE/FILTERING
+.alm-listing.row {
+	margin: 0;
+}
+
+.alm-btn-wrap{
+	position:relative;
+	padding:20px!important;
+}
+#load-more{
+	@extend .b-button;
+	height:auto;
+	width:auto!important;
+	&:focus{
+		outline:0;
+	}
+	&.loading{
+		//position:absolute!important;
+		padding-left: 50px;
+	}
+	&.done{
+		display: none!important;
+	}
+}
+
+.alm-reveal{
+	//@include clearfix();
+	.col-md-4{
+		//display:inline-block;
+		//float:none;
+	}
+}
+
+// SVG ICONS
+.si-icon{
+	line-height: 0.9;
+	display: block;
+
+	&.si-icon-play--smaller{
+		width:75px;
+		height:75px;
+		svg{
+			max-width:100%;
+			max-height:100%;
+		}
+	}
+	&.si-icon-play{
+		@include respond(mob){
+			width:47px;
+			height:47px;
+			svg{
+				max-width:100%;
+				max-height:100%;
+			}
+		}
+	}
+}
+
+
+// Browser Upgrade Prompt
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+
+//centred list items within ul/ol
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+
+	ul{
+		min-width: 696px;
+		list-style: none;
+		padding-top: 20px;
+		li {
+			display: inline;
+		}
+	}
+}
+
+
+
+//clickable divs
+
+.has-link{
+	&:hover{
+		cursor:pointer;
+	}
+}
+
+// GRAV FORMS VALIDATION
+
+/* Make the error stand out */
+.gfield_error{
+	background-color: transparent!important;
+	border:none!important;
+	width:100%!important;
+	.ginput_container{
+		width:100%!important;
+		max-width:100%!important;
+	}
+	input[type=text], input[type=tel], input[type=email], textarea{
+		border:2px solid #e85c41!important;
+	}
+}
+
+/* Hide the error message since we're displaying it above */
+.validation_error, .validation_message {
+	display:none!important;
+}
+
+
+/* The main container */
+#blog-cats-list {
+  //height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* The main list */
+#blog-cats-list > .jswrap {
+  height: 100%;
+  overflow: auto;
+}
+
+/* Section headers, defined through "headlineSelector" */
+#blog-cats-list > .wrap > .l-stackcontainer .l-blog-toolbar {
+  display: block;
+}
+
+/* Section headers when "sticky", defined through "stickyClass" */
+#blog-cats-list > .wrap > .sticky .l-blog-toolbar {
+  position: absolute;
+  top: 0;
+}
+
+
+.sticky-header-hidden {visibility:hidden;}
+// .sticky-header-wrap {position:relative;}
+h2.sticky-helper {position:absolute; margin-top:0;}

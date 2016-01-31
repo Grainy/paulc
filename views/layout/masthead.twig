@@ -1,0 +1,25 @@
+{% if hero == true %}
+	{% set position = 'l-masthead--absolute' %}
+{% else %}
+	{% set position = 'l-masthead--static' %}
+{% endif %}
+<header class="l-masthead {{position}}">
+	{% block header %}
+		<div class="container">
+			<header class="row">
+				<div class="col-sm-4">
+					<a href="/" class="l-masthead__logo"></a>
+				</div>
+				<div class="col-sm-8">
+					<div class="l-masthead__nav">
+						{% for item in primaryNav.get_items %}
+							<li class="l-masthead__nav--item rel-v-center {{item.classes | join(' ')}}" data-type="{{item.title}}">
+						    	<a class="" href="{{item.get_link}}">{{item.title}}</a>
+							</li>
+						{% endfor %}
+					</div>
+				</div>
+			</header>
+		</div>
+	{% endblock %}
+</header>

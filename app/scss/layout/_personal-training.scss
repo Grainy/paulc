@@ -1,0 +1,9 @@
+@include b(l-personal-training){
+	height: 90vh;
+
+	@include e(content){
+		h2, li, p , a{
+			color: $white;
+		}
+	}	
+}

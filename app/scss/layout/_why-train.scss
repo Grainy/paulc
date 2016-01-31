@@ -1,0 +1,53 @@
+@include b(l-why-train){
+	height: 80vh;
+
+	@include e(content) {
+		padding: 25px 50px;
+		background: $white;
+
+		h2, li, p , a{
+			color: $black;
+		}
+
+		h2 {
+			@include rem(font-size, 30px);
+			margin-top: 0;
+		}
+
+		li {
+			list-style-type: none;
+		}
+	}
+
+	@include e(price) {
+		background: $accent;
+		width: 100%;
+		float: left;
+		padding: 25px 50px;
+		font-size: 16px;
+		font-family: 'bebas_neueregular';
+
+		span {
+			font-family: $font-family;
+			display: block;
+			color: $white;
+			font-size: 22px;
+		}
+
+		li {
+			list-style-type: none;
+			&.first {
+				&:after {
+					content: " ";
+					display: block;
+					height: 50%;
+					width: 1px;
+					background: $white;
+					position: absolute;
+					right: 10px;
+					top: 0px;
+				}
+			}
+		}
+	}
+}

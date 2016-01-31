@@ -1,0 +1,33 @@
+@include b(l-footer){
+	background: $black;
+
+	h5, p, li, a {
+		color: $white;
+	}
+
+	h5 {
+		font-size: 18px;
+	}
+
+	p, li, a {
+		font-weight: 300;
+		font-size: 14px;
+	}
+
+	ul {
+		list-style-type:none;
+		padding-left: 0;
+
+		li {
+			font-size: 14px;
+			position: static;
+			color: $white;
+			font-family: $font-family;
+			margin: 0;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+}

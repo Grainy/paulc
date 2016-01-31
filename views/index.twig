@@ -1,0 +1,7 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include 'layout/hero.twig' with { heading :'YOUR <span class="blue">JOURNEY</span><br>STARTS HERE', video : true} %}
+	{% include 'layout/introduction.twig' %}
+	{% include 'layout/personal-training.twig' %}
+{% endblock %}
