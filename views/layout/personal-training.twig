@@ -1,21 +1,21 @@
 
-{% set heroBgImg = post.get_field('hero_background_image') ? post.get_field('hero_background_image') : site.theme.link ~ "/app/img/tmp/personal-training.jpg" %}
+{% set heroBgImg = post.get_field('home_pt_background_image') %}
 
 <div class="l-hero l-personal-training page-section" style="background-image:url('{{ heroBgImg}}')">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7 l-personal-training__content ab-v-center">
-				<h2><span class="blue">Personal</span> training</h2>
-				<p>I understand that my clients want more than just a good workout. They want a personal trainer who motivates them, cares about them, and sets a good example. I believe my professionalism, attitude, passion and my knowledge of health &amp; ﬁtness are what sets me apart from other trainers.</p>
+				<h2>{{post.get_field('home_pt_title')}}</h2>
+				
+				{{post.get_field('home_pt_text')}}
 
 				<ol>
-					<li>1 hour 1:2:1 session with paul</li>
-					<li>complete training program including video tutorials</li>
-					<li>full diet and nutrition coaching</li>
-					<li>daily support and weekly reviews to keep on</li>
+					{% for item in post.get_field('home_pt_list') %}
+					    <li>{{item.home_pt_list_item}}</li>
+					{% endfor %}
 				</ol>
 
-				<a href="#" class="b-button">Learn More</a>
+				<a href="{{post.get_field('home_pt_button_link')}}" class="b-button">{{post.get_field('home_pt_button_text')}}</a>
 			</div>
 		</div>
 	</div>

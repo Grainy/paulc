@@ -1,23 +1,17 @@
 
-{% set heroBgImg = post.get_field('hero_background_image') ? post.get_field('hero_background_image') : site.theme.link ~ "/app/img/tmp/why-train.jpg" %}
+{% set heroBgImg = post.get_field('pt_wt_image') %}
 
 <div class="l-hero l-why-train page-section" style="background-image:url('{{ heroBgImg}}')">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 ab-v-center text-center">
 				<div class="l-why-train__content">
-					<h2>Why train with PAUL CAMBRAY?</h2>
-					<li>1 to 1 Training with Paul</li>
-					<li>*</li>
-					<li>A personalised Nutrition Plan including ongoing diet and nutrition coaching.</li>
-					<li>*</li>
-					<li>A detailed smart phone / tablet app including tutorial videos speciﬁc to your personal training program</li>
-					<li>*</li>
-					<li>Dedicated daily coaching through every step of your ﬁtness process</li>
+					{{post.get_field('pt_wt_content')}}
 				</div>
 				<div class="l-why-train__price text-center">
-					<li class="col-md-6 first">one off Single session rate <span>£65</span></li>
-					<li class="col-md-6">Pay monthly session rate <span>£50</span></li>
+					{% for item in post.get_field('pt_wt_price_list') %}
+					    <li class="col-md-6 {% if loop.first %}first{% endif %}">{{item.type}} <span>{{item.price}}</span></li>
+					{% endfor %}
 				</div>
 			</div>
 		</div>

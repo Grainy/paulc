@@ -37,6 +37,10 @@
 				@include rem(font-size, 60px);
 			}
 		}
+
+		strong {
+			color: $accent;
+		}
 	}
 
 	@include e(overlay){

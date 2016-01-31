@@ -4,27 +4,12 @@
 			<h2 class="text-center">Personal Training</h2>
 		</div>
 		<div class="col-md-6">
-			<p>For me being a Personal Trainer isn’t just a job. It’s a passion, and that’s why I really feel that anyone who trains with me gets one of the most dedicated and professional experiences they’ll ﬁnd with any trainer.</p>
-			<p>Watch what Paul’s clients have to say:</p>
-
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/S-rB0pHI9fU" frameborder="0" allowfullscreen></iframe>
-
-			<h4>Why train with PAUL CAMBRAY?</h4>
-
-			<ol>
-				<li>UNIQUE WORKOUTS THAT CHANGE EACH MONTH TO SUIT YOUR PERSONAL GOALS</li>
-				<li>FULL NUTRITION PROGRAM TO MATCH YOUR TRAINING REGIME</li>
-				<li>100% dedication till you hit success</li>
-				<li>results beyond what you didn’t believe you could achieve</li>
-			</ol>
-
-			<a href="#" class="b-button">book your free consultation &amp; taster session</a>
+			{{post.content}}
 		</div>
 		<aside class="col-md-6">
-			<img src="{{site.theme.link}}/app/img/tmp/before-after.jpg" alt="">
+			<img src="{{post.get_field('pt_sidebar_image').url}}" alt="{{post.get_field('pt_sidebar_iamge').alt}}">
 			<div class="aside-content">
-				<p><em>Although a regular gym user I really wanted to push myself further than working out on my own. I had tried a PT before and was sceptical about what else I would achieve. I then saw Paul training someone and spoke to him afterwards. I realised he had another ‘gear’, and would go the extra mile to push me harder for the results I wanted and train me to a level I didn’t know existed, never mind could achieve personally. I can’t thank Paul enough, and would recommend him to anyone wanting to change their body, and life! What he doesn’t know about ﬁtness isn’t worth knowing. Regardless of your ﬁtness level, he’ll design a programme that is right for you &amp; make sure you achieve results greater than you would ever have expected, but importantly, enjoy yourself whilst doing it.”</em></p>
-				<p class="author">ADRIAN ADIAR - HALE COUNTRY CLUB MEMBER</p>
+				{{post.get_field('pt_sidebar')}}
 			</div>
 		</aside>
 	</div>

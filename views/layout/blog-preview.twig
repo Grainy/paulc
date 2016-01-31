@@ -9,6 +9,7 @@
 				<div class="col-md-4 l-blog-preview__post">
 					<h6>{{blogpost.category}}</h6>
 					<h3>{{blogpost.title}}</h3>
+					<h5>{{ post.post_date|date}}</h5>
 					<p>{{blogpost.post_content|excerpt(30)}}</p>
 					<a href="{{blogpost.link}}">Continue Reading</a>
 				</div>

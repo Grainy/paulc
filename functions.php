@@ -62,6 +62,7 @@ class StarterSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
 		$context['primaryNav'] = new TimberMenu('primary');
 		$context['site'] = $this;
+		$context['options'] = get_fields('options');
 		return $context;
 	}
 
@@ -91,3 +92,7 @@ function _setup() {
 
 endif; // _setup
 add_action( 'after_setup_theme', '_setup' );
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page( 'Footer' );
+}

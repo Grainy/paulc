@@ -1,10 +1,24 @@
 
 {% set heroBgImg = post.get_field('hero_background_image') ? post.get_field('hero_background_image') : site.theme.link ~ "/app/img/tmp/placeholder-hero.jpg" %}
 
-<div class="l-hero" style="background-image:url('{{ heroBgImg}}')">
+{% if post.get_field('hero_title_text') %}
+	{% set heading = post.get_field('hero_title_text') %}
+{% endif %}
+
+<div class="l-hero {% if single %}smaller{% endif %}" style="background-image:url('{{ heroBgImg}}')">
 	<div class="l-hero__overlay">
 		<div class="l-hero__text">
-			<h2>{{heading}}</h2>
+			{% if single %}
+				<h6>{{post.category}}</h6>
+				<h2>{{heading}}</h2>
+				<p class="blog-author">
+					<span>By</span> {{ post.author.nickname }} <span>&bull;</span> {{ post.post_date|date}}
+				</p>
+
+			{% else %}
+
+				<h2>{{heading}}</h2>
+			{% endif %}
 		</div>
 
 		{% if video == true %}

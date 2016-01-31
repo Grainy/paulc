@@ -1,12 +1,10 @@
 
-{% set heroBgImg = post.get_field('hero_background_image') ? post.get_field('hero_background_image') : site.theme.link ~ "/app/img/tmp/book-consultation.jpg" %}
+{% set heroBgImg = post.get_field('pt_bc_image') ? post.get_field('pt_bc_image') : site.theme.link ~ "/app/img/tmp/book-consultation.jpg" %}
 
 <div class="l-hero smaller" style="background-image:url('{{ heroBgImg}}')">
 	<div class="l-hero__overlay">
 		<div class="l-hero__text">
-			<h2>book your <span class="blue">free</span> consultation session</h2>
-			<p>Get in touch to recieve a free consultation session with<br>Paul, or answers to any queries you may have.</p>
-			<a href="#" class="b-button">Get in touch</a>
+			{{post.get_field('pt_bc_content')}}
 		</div>
 	</div>
 </div>

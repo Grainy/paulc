@@ -8,26 +8,19 @@
 				<h1 class="text-center">{{post.title}}</h1>
 			</div>
 			<div class="col-sm-6">
-				<p>Paul is widely known and recognised as a ﬁtness expert with a passion for the industry that rubs off on anyone he meets and trains. For over 10 years Paul has devoted his life to ﬁtness, with a level of dedication and humour second to none as he has risen from a ﬁtness instructor in local gyms and sports halls to a respected Personal Trainer and Nutritional Advisor. </p>
-				<p>Paul's outgoing, grounded and infectious personality has endeared him many people over the years, and his passion for Fitness and more speciﬁcally helping people achieve their full potential has led to a constant demand for his services as a personal trainer, and ﬁtness expert.</p>
+				{{post.content}}
 				
 				<div class="l-about__qualifications">
-					<h2>Qualifications</h2>
+					<h2>{{post.get_field('about_qualifications_title')}}</h2>
 					<ul>
-						<li>Level 4 Qualified Advanced Personal Trainer</li>
-						<li>Nutritional Advisor</li>
-						<li>Diploma in Coaching &amp; Mentoring</li>
-						<li>NLP Practioner</li>
-						<li>Strength Coach</li>
-						<li>Reebok Sponsored Trainer and Presenter</li>
-						<li>Advanced Resistance Training Level 3</li>
-						<li>Workout In Lead Trainer</li>
-						<li>Insanity Pro Team Trainer</li>
+						{% for item in post.get_field('about_qualfications') %}
+						    <li>{{item.qualification}}</li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
 			<div class="col-sm-6">
-				<img src="{{site.theme.link}}/app/img/tmp/paul.jpg" alt="">
+				<img src="{{post.get_field('about_image').url}}" alt="{{post.get_field('about_image').alt}}">
 			</div>
 		</div>
 	</div>

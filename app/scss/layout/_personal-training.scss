@@ -5,5 +5,11 @@
 		h2, li, p , a{
 			color: $white;
 		}
+
+		h2 {
+			strong {
+				color: $accent;
+			}
+		}
 	}	
 }

@@ -132,8 +132,10 @@ h6 {
 	color: #ababab;
 }
 
-p{
+p {
 	margin-top: 0;
+	line-height: 1.5em;
+	color: #140A08;
 }
 
 a {
@@ -251,4 +253,23 @@ a[href^=tel]{
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
+
+.alignright {
+	float: right;
+	clear: right;
+	margin-left: 10px;
+}
+
+.alignleft {
+	float: left;
+	clear: left;
+	margin-right: 10px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 10px auto;
+	clear: both;
+}
+
 
