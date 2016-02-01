@@ -130,11 +130,18 @@
 					@include rem(font-size, 68px);
 					letter-spacing: 7px;
 				}
+				@include respond(all-phones) {
+					font-size: 60px;
+				}
+			}
+
+			h6 {
+				font-size: 18px;
 			}
 		}
 
 		.l-hero__overlay {
-			width: 50%;
+			width: 90%;
 		}
 
 		p {

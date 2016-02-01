@@ -3,9 +3,17 @@
 
 	@include e(row) {
 		margin-top: 50px;
+
+		@include respond(all-phones) {
+			margin-top: 10px;
+		}
 	}
 
 	@include e(post){
+		@include respond(all-phones) {
+			margin: 20px 0;
+		}
+
 		@include m(thumb){
 			width: 100%;
 			margin-bottom: 15px;

@@ -1,5 +1,6 @@
 @include b(l-why-train){
-	height: 80vh;
+	min-height: 80vh;
+	height: auto;
 
 	@include e(content) {
 		padding: 25px 50px;

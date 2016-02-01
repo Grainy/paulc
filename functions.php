@@ -22,6 +22,12 @@ function _scripts() {
 
 	// Load all of the styles that need to appear on all pages
 	wp_enqueue_style( 'custom', get_template_directory_uri() . '/app/css/style.css' );
+
+	$url = explode('?', 'http://'.$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+	$post_id = url_to_postid($url[0]);
+
+	$vcode = get_field('hero_yt_video_id', $post_id);
+	wp_localize_script( 'scripts', 'vcode', $vcode);
 }
 
 add_action( 'wp_enqueue_scripts', '_scripts' );

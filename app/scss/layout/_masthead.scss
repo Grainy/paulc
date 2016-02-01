@@ -18,19 +18,37 @@
 		width: 307px;
 		height: 100px;
 		background: url("/app/themes/paulcambray/app/img/logo/logo.png") no-repeat;
-		@include image-2x("/app/themes/paulcambray/app/img/logo/logo2x.png", contain)
+		@include image-2x("../img/logo/logo.png", contain);
+
+		@include respond(all-phones) {
+			width: 100%;
+			height: 43px;
+			margin-top: 11px;
+		}
 	}
 
 	@include e(nav) {
 		float: right;
 		height: 100px;
 
+		@include respond(all-phones) {
+			height: auto;
+		}
+
 		@include m(item) {
 			display: inline-block;
 			margin-right: 40px;
 			position: relative;
 			top: 50%;
-			transform: translate(0%, -50%);  
+			transform: translate(0%, -50%);
+
+			@include respond(all-phones) {
+				display: block;
+				margin-right: 0px;
+				top: 0%;
+				text-align: right;
+				transform: translate(0%);
+			}
 
 			&:last-child {
 				margin-right: 0;
@@ -43,6 +61,10 @@
 				transition: color .5s ease;
 				font-family: 'bebas_neueregular';
 				letter-spacing: 1.5px;
+
+				@include respond(all-phones) {
+					font-size: 15px;
+				}
 			}
 
 			&.current-menu-item {

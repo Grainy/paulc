@@ -9,15 +9,17 @@ var videoModal = (function($) {
 	  Swap video with autoplay video
 	---------------------------------*/
 
-	function autoPlayVideo(vcode, width, height) {
-	  $(".video-container").html('<iframe id="video" width="'+width+'" height="'+height+'" src="https://www.youtube.com/embed/'+vcode+'?autoplay=1&loop=1&rel=0&wmode=transparent" frameborder="0" allowfullscreen wmode="Opaque"></iframe>');
+	function autoPlayVideo() {
+		$(".video-container").html('<iframe id="video" width="100%" height="100%" src="https://www.youtube.com/embed/'+vcode+'?autoplay=1&loop=1&rel=0&wmode=transparent" frameborder="0" allowfullscreen wmode="Opaque"></iframe>');
 	}
 
 	var _bindEvents = function() {
 		$('.js-play').on('click', function() {
 			$('.l-vid-modal').addClass('animated');
 
-			autoPlayVideo('usNsCeOV4GM','100%','100%');
+			autoPlayVideo();
+
+			console.log(vcode);
 		});
 
 		$('.js-vid-close').on('click', function() {

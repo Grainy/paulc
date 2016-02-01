@@ -7,10 +7,10 @@
 	{% block header %}
 		<div class="container">
 			<header class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-4 col-xs-6">
 					<a href="/" class="l-masthead__logo"></a>
 				</div>
-				<div class="col-sm-8">
+				<div class="col-sm-8 col-xs-6">
 					<div class="l-masthead__nav">
 						{% for item in primaryNav.get_items %}
 							<li class="l-masthead__nav--item rel-v-center {{item.classes | join(' ')}}" data-type="{{item.title}}">

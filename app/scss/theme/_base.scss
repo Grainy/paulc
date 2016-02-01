@@ -82,6 +82,9 @@ img {
     height: auto;
 }
 
+iframe {
+	max-width: 100%;
+}
 
 .valign {
   display: table;
@@ -252,18 +255,37 @@ a[href^=tel]{
 .page-section {
 	padding-top: 50px;
 	padding-bottom: 50px;
+
+	@include respond(all-phones) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 }
 
 .alignright {
 	float: right;
 	clear: right;
 	margin-left: 10px;
+
+	@include respond(all-phones) {
+		margin-left: 0;
+		float: none;
+		margin: 10px auto;
+		clear: both;
+	}
 }
 
 .alignleft {
 	float: left;
 	clear: left;
 	margin-right: 10px;
+
+	@include respond(all-phones) {
+		margin-right: 0;
+		float: none;
+		margin: 10px auto;
+		clear: both;
+	}
 }
 
 .aligncenter {

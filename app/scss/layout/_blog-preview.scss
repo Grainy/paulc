@@ -2,6 +2,10 @@
 	background: #eeeeee;
 
 	@include e(post){
+		@include respond(all-phones) {
+			margin: 20px 0;
+		}
+		
 		h6 {
 			margin-top: 0;
 			margin-bottom: 0;

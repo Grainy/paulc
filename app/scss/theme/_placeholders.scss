@@ -144,4 +144,9 @@
   position: absolute;
   top: 50%;
   transform: translate(0%, -50%);  
+
+  @include respond(all-phones) {
+    position: static;
+    transform: translate(0);
+  }
 }
