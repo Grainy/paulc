@@ -4,15 +4,17 @@
 <div class="l-hero l-why-train page-section" style="background-image:url('{{ heroBgImg}}')">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5 ab-v-center text-center">
+			<div class="col-md-5 ab-v-center">
 				<div class="l-why-train__content">
 					{{post.get_field('pt_wt_content')}}
 				</div>
-				<div class="l-why-train__price text-center">
-					{% for item in post.get_field('pt_wt_price_list') %}
-					    <li class="col-md-6 {% if loop.first %}first{% endif %}">{{item.type}} <span>{{item.price}}</span></li>
-					{% endfor %}
-				</div>
+				{% if post.get_field('pt_wt_price_list') %}
+					<div class="l-why-train__price text-center">
+						{% for item in post.get_field('pt_wt_price_list') %}
+						    <li class="col-md-6 {% if loop.first %}first{% endif %}">{{item.type}} <span>{{item.price}}</span></li>
+						{% endfor %}
+					</div>
+				{% endif %}
 			</div>
 		</div>
 	</div>

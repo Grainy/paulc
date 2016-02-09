@@ -38,6 +38,7 @@ gulp.task('styles', function () {
 // JAVASCRIPT
 gulp.task('scripts', function() {
   return gulp.src([
+    './app/js/vendor/*.js',
     './app/js/module/*.js',
     './app/js/scripts.js'
     ])

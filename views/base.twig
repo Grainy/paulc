@@ -12,7 +12,9 @@
 	{% spaceless %}
 
 		<body class="{{body_class}}" data-template="base.twig">
-			{% include 'layout/video-modal.twig' %}
+			{% if function('wpmd_is_phone') %}
+				{% include 'layout/video-modal.twig' %}
+			{% endif %}
 			
 			{% include 'layout/masthead.twig' %}
 			

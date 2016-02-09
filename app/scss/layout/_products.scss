@@ -1,0 +1,86 @@
+@include b(l-products){
+	background: #eeeeee;
+
+	@include e(row) {
+		margin-top: 50px;
+
+		@include respond(all-phones) {
+			margin-top: 10px;
+		}
+	}
+
+	@include e(product){
+		@include respond(all-phones) {
+			margin: 20px 0;
+		}
+
+		@include m(thumb){
+			width: 100%;
+			margin-bottom: 15px;
+		}
+
+		h3 {
+			a {
+				font-family: $font-family;
+				color: #5c5c5c;
+			}
+		}
+
+		h6 {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		p {
+			color: #5c5c5c;
+		}
+
+		a {
+			font-family: 'bebas_neueregular';
+		}
+
+		.popup-modal {
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.product-modal {
+	background-color: $white;
+	padding: 25px;
+	float: left;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+
+	@include respond(desktop) {
+		max-width: 75%;
+	}
+
+	.popup-modal-dismiss {
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		background: #333333;
+		border-radius: 100%;
+		text-decoration: none;
+		transition: background .5s ease;
+
+		&:hover {
+			background: $accent;
+		}
+
+		&:after {
+			content: "X";
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			color: $white;
+		}
+	}
+}

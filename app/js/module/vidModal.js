@@ -18,8 +18,6 @@ var videoModal = (function($) {
 			$('.l-vid-modal').addClass('animated');
 
 			autoPlayVideo();
-
-			console.log(vcode);
 		});
 
 		$('.js-vid-close').on('click', function() {

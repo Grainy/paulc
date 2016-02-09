@@ -36,5 +36,6 @@ if ( is_day() ) {
 }
 
 $context['posts'] = Timber::get_posts();
+$context['noPreview'] = true;
 
 Timber::render( $templates, $context );

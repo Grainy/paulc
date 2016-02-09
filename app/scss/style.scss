@@ -2,6 +2,7 @@
 @import "vendor/reset";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "vendor/form-reset";
+@import "vendor/mp/main";
 @import "functions/all";
 
 // HELPERS
@@ -29,4 +30,6 @@
 @import "layout/blog-preview";
 @import "layout/about";
 @import "layout/why-train";
+@import "layout/gallery";
 @import "layout/blog-archive";
+@import "layout/products";

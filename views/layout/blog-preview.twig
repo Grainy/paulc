@@ -6,9 +6,15 @@
 			</div>
 
 			{% for blogpost in posts %}
+				{% if blogpost.get_field('hero_background_image') %}
+					{% set thumbsrc = blogpost.get_field('hero_background_image')|resize(400, 200) %}
+					{% else %}
+					{% set thumbsrc = site.theme.link ~ "/app/img/logo/logo-white-on-black.png" %}
+				{% endif %}
 				<div class="col-md-4 l-blog-preview__post">
+					<a href="{{blogpost.link}}"><img src="{{thumbsrc}}" alt="" class="l-blog-archive__post--thumb"></a>
 					<h6>{{blogpost.category}}</h6>
-					<h3>{{blogpost.title}}</h3>
+					<h3><a href="{{blogpost.link}}">{{blogpost.title}}</a></h3>
 					<h5>{{ post.post_date|date}}</h5>
 					<p>{{blogpost.post_content|excerpt(30)}}</p>
 					<a href="{{blogpost.link}}">Continue Reading</a>

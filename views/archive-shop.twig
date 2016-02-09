@@ -1,0 +1,75 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="l-products page-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="text-center">Shop</h2>
+				{% filter shortcodes %}
+					[show_wp_shopping_cart]
+				{% endfilter  %}
+			</div>
+		</div>
+		<div class="row l-products__row">
+			{% set i = 0 %}
+			{% for product in posts %}
+
+				{% set thumbsrc = product.thumbnail %}
+
+				<div class="col-md-4 col-sm-6 l-products__product">
+					<div class="col-md-12">
+						<img src="{{thumbsrc}}" alt="" class="l-products__product--thumb">
+						<h6>{{product.category}}</h6>
+						<h3><a href="{{product.link}}">{{product.title}}</a></h3>
+						<p>{{product.post_content|excerpt(30)}}</p>
+						
+						<a class="popup-modal" href="#product{{i}}">Continue Reading</a>
+					</div>
+				
+					<div class="col-md-6"><p>RRP: {{product.rrp}}</p></div>
+					<div class="col-md-6"><p><strong>Our Price: {{product.our_price}}</strong></p></div>
+					
+					<div class="col-md-12 text-center">
+						{% filter shortcodes %}
+							[wp_cart_button name="{{product.title}}" price="{{product.our_price}}"]
+						{% endfilter  %}
+					</div>
+				</div>
+
+				{% if loop.index is divisibleby(3) and not loop.last %}
+					</div>
+					<div class="row l-products__row">
+				{% endif %}
+
+				<div id="product{{i}}" class="mfp-hide white-popup-block product-modal">
+					<div class="col-md-3">
+						<img src="{{thumbsrc}}" alt="">
+					</div>
+					<div class="col-md-9">
+						<p>{{product.post_content}}</p>
+					</div>
+
+					<div class="col-md-9 col-md-offset-3 p-0">
+						<div class="col-md-6">
+							<p>RRP: {{product.rrp}}</p>
+							<p><strong>Our Price: {{product.our_price}}</strong></p>
+						</div>
+						<div class="col-md-6 text-right">
+							{% filter shortcodes %}
+								[wp_cart_button name="{{product.title}}" price="{{product.our_price}}"]
+							{% endfilter  %}
+						</div>
+					</div>
+
+					<a class="popup-modal-dismiss" href="#"></a>
+				</div>
+
+				{% set i = i + 1 %}
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

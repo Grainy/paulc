@@ -36,8 +36,8 @@
 	}
 
 	@include e(close){
-		width:63px;
-		height:63px;
+		width:27px;
+		height:26px;
 		position: absolute;
 		top:30px;
 		right:30px;
@@ -47,6 +47,11 @@
 		}
 		img{
 			display: block;
+		}
+
+		@include respond (all-phones) {
+			top: auto;
+			bottom: 30px;
 		}
 	}
 

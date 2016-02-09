@@ -294,4 +294,15 @@ a[href^=tel]{
 	clear: both;
 }
 
+.p-0 {
+	padding: 0;
+}
+
+.wp_cart_button_wrapper {
+	form {
+		@extend .b-button;
+		display: inline-block;
+	}
+}
+
 

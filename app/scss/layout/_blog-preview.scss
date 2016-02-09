@@ -18,5 +18,12 @@
 		a {
 			font-family: 'bebas_neueregular';
 		}
+
+		h3 {
+			a {
+				font-family: $font-family;
+				color: #5c5c5c;
+			}
+		}
 	}
 }
